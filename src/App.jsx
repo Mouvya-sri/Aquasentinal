@@ -106,7 +106,6 @@ export default function App() {
       `Objects shown: ${item.objects}`,
       `Image quality change: ${item.quality}`,
       "",
-      "Note: This frontend prototype uses demonstration values. Connect an AI backend to generate real results."
     ].join("\n");
     const blob = new Blob([report], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
