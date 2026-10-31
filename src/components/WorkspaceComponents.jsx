@@ -124,11 +124,3 @@ export function HistoryPage({ analyses, onReport, searchTerm }) {
   </>;
 }
 
-export function AccountPage({ accountName, setAccountName, onSave }) {
-  const [email, setEmail] = useState("mouvya@example.com");
-  const [role, setRole] = useState("Student researcher");
-  return <>
-    <PageHeading eyebrow="PERSONAL SETTINGS" title="Account" subtitle="Manage your profile and workspace details."/>
-    <div className="account-layout"><section className="panel account-panel"><div className="panel-heading"><div><h3>Profile information</h3><p>Update the details shown in your workspace.</p></div></div><div className="profile-banner"><div className="profile-avatar">MS</div><div><strong>{accountName || "Your name"}</strong><span>Research workspace member</span></div><span className="verified-pill"><CheckCircle2 size={13}/> Active</span></div><label className="field-label">Full name<input value={accountName} onChange={e=>setAccountName(e.target.value)} placeholder="Your full name"/></label><label className="field-label">Email address<input type="email" value={email} onChange={e=>setEmail(e.target.value)}/></label><label className="field-label">Role<input value={role} onChange={e=>setRole(e.target.value)}/></label><div className="form-actions"><button className="button button-primary" onClick={onSave}>Save changes <Check size={15}/></button></div></section><section className="panel preferences-panel"><div className="panel-heading"><div><h3>Workspace preferences</h3><p>Your current app settings</p></div></div><div className="preference-row"><div><strong>Appearance</strong><span>Dark ocean theme</span></div><span className="preference-value">Dark</span></div><div className="preference-row"><div><strong>Default analysis</strong><span>Enhancement + detection</span></div><span className="preference-value">AI Vision</span></div><div className="preference-row"><div><strong>Privacy</strong><span>Uploads stored by local API</span></div><ShieldCheck size={18} className="privacy-icon"/></div></section></div>
-  </>;
-}
